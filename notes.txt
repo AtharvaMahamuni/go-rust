@@ -38,7 +38,7 @@ Golang (LCO YT course)
 
 ===={Lexer}====
 - Lexer is the part of compiler in any language which checks the grammar of the language and helps for syntax errors.
-- In go, the lexer will putup the semicolons for you, no need to do it explicitely.
+- In go, the lexer will putup the semicolons for you, no need to do it explicitly.
 - Use it in complex statments though for clean code :)
 - More on this in go lang specifications - https://go.dev/ref/spec
 
@@ -81,6 +81,7 @@ Usually `int` works at most of the places for os-specific stuff you need to use 
 
 
 - implicit type -
+
 	* You can directly write the variable without mentioning the type, type is determined by the value you assigned.
 Once the value is assigned the type gets fixed and you can't change it for that variable till its scope.
 
@@ -88,5 +89,49 @@ Once the value is assigned the type gets fixed and you can't change it for that 
 - no var style - 
 
 	* Here we don't use the `var` keyword, we use the special operator to assign the values `:=`.
-It is only be used in the functions only, not as a global variable, it is short form of variable declaration.
+It is used in the functions only, not as a global variable, it is short form of variable declaration.
 eg. numberOfUsers := 32
+
+
+===={user input}====
+
+To read and find the go packages you can visit -> https://pkg.go.dev/
+
+We need to packages -
+1. bufio -> NewReader() : to take the user input
+2. os -> Stdin() : to take input from os standard input
+
+
+- comma ok || comma err syntx -
+In go there is no try catch, every thing expects either value or error.
+
+1. variable, err := function returns something either value or error
+2. variable, _ := We are not expecting the error or ignoring it
+3. _, err := We are not expecting the value for variable or ignoring it, we are intersted in error
+
+
+- Type conversion -
+ * We use the strconv package for type conversion
+	- ParseFloat()
+	- ParseInt()
+	... many more ...
+
+- strings package -
+	* strings pacakge contains utilities to work with string like
+	- UpperCase
+	- LowerCase
+	- Trim
+	... many more ... 
+
+
+===={Handling Time}====
+
+- We use time package
+- There are specific number which you need to use for formating the date and time.
+- All this needs to be as it is, making change will cause an error
+
+ dd/mm/yy -> 02/01/2006
+ day -> Monday
+ time -> 15:04:05
+
+... more details of go docs ...
