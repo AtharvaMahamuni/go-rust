@@ -135,3 +135,24 @@ In go there is no try catch, every thing expects either value or error.
  time -> 15:04:05
 
 ... more details of go docs ...
+
+
+===={Memory Management}====
+* Memory allocation and deallocation happens automatically.
+
+* 2 Keywords used to allocate the memory
+
+1. new()
+- Allocate memory but no INIT (initialization of a memory)
+- You will get a memory address
+- Zeroed storage (Where you can't put any data initialy)
+
+2. make()
+- Allocate memory and INIT
+- You will get a memory address 
+- Non-zeroed storage (Where you can put data initialy)
+
+* GC happens automatically
+* Out of scope or nil
+
+* More on Runtime package to get low level information visit - https://pkg.go.dev/runtime
