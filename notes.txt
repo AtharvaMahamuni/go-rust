@@ -1,4 +1,4 @@
-Golang (LCO YT course)
+Golang (LCO YT course) - https://www.youtube.com/playlist?list=PLRAV69dS1uWQGDQoBYMZWKjzuhCaOnBpa
 ======
 
 
@@ -124,6 +124,11 @@ In go there is no try catch, every thing expects either value or error.
 	... many more ... 
 
 
+===={Maths, crypto and random}====
+* There are many ways to generate the random numbers.
+2 of them are using the math/rand pkg and crypto/rand pkg. (read docs for more info.)
+
+
 ===={Handling Time}====
 
 - We use time package
@@ -156,3 +161,4 @@ In go there is no try catch, every thing expects either value or error.
 * Out of scope or nil
 
 * More on Runtime package to get low level information visit - https://pkg.go.dev/runtime
+
