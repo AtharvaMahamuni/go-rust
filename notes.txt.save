@@ -117,7 +117,7 @@ In go there is no try catch, every thing expects either value or error.
 	... many more ...
 
 - strings package -
-	* strings pacakge contains utilities to work with string like
+	* strings package contains utilities to work with string like
 	- UpperCase
 	- LowerCase
 	- Trim
