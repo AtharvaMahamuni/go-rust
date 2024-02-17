@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"os"
 	"io"
+	"os"
 	"strings"
 )
 
@@ -13,10 +13,10 @@ func main() {
 	filePath := "./myfile.txt"
 
 	file, err := os.Create(filePath)
-	checkNilErr(err) 
+	checkNilErr(err)
 
 	length, err := io.WriteString(file, content)
-	checkNilErr(err)  
+	checkNilErr(err)
 
 	fmt.Println("Length is:", length)
 	defer file.Close()
