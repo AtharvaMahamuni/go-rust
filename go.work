@@ -22,4 +22,6 @@ use (
 	./19webrequests
 	./20urls
 	./21gofrontend
+	./22bitmorejson
+	./23mymodules
 )
