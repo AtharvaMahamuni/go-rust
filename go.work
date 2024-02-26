@@ -24,4 +24,5 @@ use (
 	./21gofrontend
 	./22bitmorejson
 	./23mymodules
+	./24buildAPI
 )
