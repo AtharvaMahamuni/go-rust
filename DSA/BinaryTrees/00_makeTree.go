@@ -14,11 +14,11 @@ type NodeInt struct {
 
 func makeIntTree() *NodeInt {
 	a := NodeInt{Val: 5}
-	b := NodeInt{Val: 2}
+	b := NodeInt{Val: 8}
 	c := NodeInt{Val: 9}
-	d := NodeInt{Val: 1}
-	e := NodeInt{Val: 7}
-	f := NodeInt{Val: 4}
+	d := NodeInt{Val: 3}
+	e := NodeInt{Val: 21}
+	f := NodeInt{Val: 12}
 
 	a.Left = &b
 	a.Right = &c
