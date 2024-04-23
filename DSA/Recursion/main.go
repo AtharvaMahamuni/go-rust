@@ -16,5 +16,10 @@ func main() {
 
 	// TODO: functional problems
 	// 1. reverse the array
-	fmt.Println("Reversed Array", reverseArray([]int{6, 1, 9, 10, 14, 22, 11, 4}))
+	// fmt.Println("Reversed Array", reverseArray([]int{6, 1, 9, 10, 14, 22, 11, 4}))
+
+	// fmt.Println(checkPalindrome("aaabbaaa"))
+	// fmt.Println(checkPalindrome("aaabbaa"))
+
+	fmt.Println(fibonacchi(5))
 }
