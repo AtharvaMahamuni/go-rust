@@ -21,5 +21,13 @@ func main() {
 	// fmt.Println(checkPalindrome("aaabbaaa"))
 	// fmt.Println(checkPalindrome("aaabbaa"))
 
-	fmt.Println(fibonacchi(5))
+	// fmt.Println(fibonacchi(5))
+
+	// 05 subset
+	// subsetString("abc")
+	// subsetArray([]int{1, 2, 3, 4})
+
+	// 06 subsequence sum
+	fmt.Println(subSequenceSum([]int{1, 2, 1}, 2))
+	fmt.Println(subSequenceSum([]int{12, 3, 4, 12, 12, 1, 14, 2, 6, 6}, 12))
 }
