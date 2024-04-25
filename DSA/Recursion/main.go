@@ -30,4 +30,10 @@ func main() {
 	// 06 subsequence sum
 	fmt.Println(subSequenceSum([]int{1, 2, 1}, 2))
 	fmt.Println(subSequenceSum([]int{12, 3, 4, 12, 12, 1, 14, 2, 6, 6}, 12))
+
+	fmt.Println(onlyOneSubsequenceSum([]int{1, 2, 1}, 2))
+	fmt.Println(onlyOneSubsequenceSum([]int{12, 3, 4, 12, 12, 1, 14, 2, 6, 6}, 12))
+
+	fmt.Println(countSubsequenceSum([]int{1, 2, 1}, 2))
+	fmt.Println(countSubsequenceSum([]int{12, 3, 4, 12, 12, 1, 14, 2, 6, 6}, 12))
 }
