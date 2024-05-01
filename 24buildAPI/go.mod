@@ -1,4 +1,4 @@
-module buildAPI
+module github.com/atharvamahamuni/buildapi
 
 go 1.21.5
 

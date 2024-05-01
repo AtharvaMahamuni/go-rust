@@ -69,7 +69,7 @@ func decodingJSON() {
 		fmt.Printf("JSON DATA: %v\n", myOnlineData)
 
 		for k, v := range myOnlineData {
-			fmt.Printf("Key: %s value: %v and Type is %T\n", k, v, v)
+			fmt.Printf("Key: %s | value: %v | Type: %T\n", k, v, v)
 		}
 
 	} else {
@@ -79,6 +79,6 @@ func decodingJSON() {
 
 func main() {
 	fmt.Println("Will create some JSON.")
-	// encodingJSON()
+	encodingJSON()
 	decodingJSON()
 }
