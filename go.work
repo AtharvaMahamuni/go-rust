@@ -25,4 +25,5 @@ use (
 	./22bitmorejson
 	./23mymodules
 	./24buildAPI
+	./25mongoapi
 )
