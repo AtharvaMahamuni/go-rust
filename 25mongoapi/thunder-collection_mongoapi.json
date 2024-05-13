@@ -1,0 +1,90 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "mongoapi",
+    "collectionId": "002b3919-f023-4acc-b810-edcbd7c2e991",
+    "dateExported": "2024-05-13T10:35:41.440Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "e3844236-4b3d-481f-ac2f-845bfa8c3710",
+            "colId": "002b3919-f023-4acc-b810-edcbd7c2e991",
+            "containerId": "",
+            "name": "get movies",
+            "url": "http://localhost:4000/api/movies",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-05-05T18:49:05.929Z",
+            "modified": "2024-05-05T18:51:26.147Z",
+            "headers": []
+        },
+        {
+            "_id": "e71454c9-9396-49b8-9053-69816a7aa227",
+            "colId": "002b3919-f023-4acc-b810-edcbd7c2e991",
+            "containerId": "",
+            "name": "Add Movie",
+            "url": "http://localhost:4000/api/movie",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-05-05T18:53:11.759Z",
+            "modified": "2024-05-13T10:35:14.958Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"movie\":\"Spiderman\",\n  \"watched\":false\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "6c0bea7a-2743-46fc-88eb-b53747801be2",
+            "colId": "002b3919-f023-4acc-b810-edcbd7c2e991",
+            "containerId": "",
+            "name": "Update Movie",
+            "url": "http://localhost:4000/api/movie/{id}",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-05-13T10:28:42.388Z",
+            "modified": "2024-05-13T10:31:40.133Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "6637d577d256c896c6c02879",
+                    "isPath": true
+                }
+            ]
+        },
+        {
+            "_id": "416dc714-1a05-4407-aee1-6b07beb2310b",
+            "colId": "002b3919-f023-4acc-b810-edcbd7c2e991",
+            "containerId": "",
+            "name": "delete Movie",
+            "url": "http://localhost:4000/api/movie/{id}",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-05-13T10:33:21.663Z",
+            "modified": "2024-05-13T10:33:42.037Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "6637d577d256c896c6c02879",
+                    "isPath": true
+                }
+            ]
+        },
+        {
+            "_id": "ff7b72c6-9cbf-4aec-b568-39747aa3ac87",
+            "colId": "002b3919-f023-4acc-b810-edcbd7c2e991",
+            "containerId": "",
+            "name": "Delete All",
+            "url": "http://localhost:4000/api/movies",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2024-05-13T10:34:32.184Z",
+            "modified": "2024-05-13T10:34:49.703Z",
+            "headers": []
+        }
+    ],
+    "ref": "Wc7NuGUxGdvwnHMvBAjM13aCM2AzlStnrPcwZKJpp9YRCIn0Qi-0pR4o44RdVYf7ITfcD8JFVxU_Z8eLm-1SKg"
+}
