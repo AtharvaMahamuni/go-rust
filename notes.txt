@@ -6,7 +6,7 @@ Golang (LCO YT course) - https://www.youtube.com/playlist?list=PLRAV69dS1uWQGDQo
 
 - Compiled :
 1. Go tool can run file directly, without VM.
-2. Executables are different for OS.
+2. Executables can be generated for different OS.
 
 - What :
 1. System apps to web apps - Cloud (Reducing the resources required to run the servers)
@@ -17,7 +17,7 @@ Golang (LCO YT course) - https://www.youtube.com/playlist?list=PLRAV69dS1uWQGDQo
 2. Similarity with lots of lanugages - C, java, pascal
 
 - Object oriented 
-1. Yes and No
+1. Yes and No (The question is do you really require it to do that or it has its own way to do the things)
 
 - Missing 
 1. A lot, but is it really missing?
