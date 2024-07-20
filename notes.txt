@@ -44,7 +44,7 @@ Golang (LCO YT course) - https://www.youtube.com/playlist?list=PLRAV69dS1uWQGDQo
 
 
 ===={Types}====
-- Case sensitive; almost! Captial first letter - Public, if small - Private
+- Case sensitive; almost! Captial first letter -> Public, if small -> Private
 - Variable type should be known in advance
 - Everything is a Type
 
@@ -67,8 +67,8 @@ Advance Types :
 
 ===={Variables}====
 
-To learn more about the variables, there size and bound values, it is availaible on go site.
-Usually `int` works at most of the places for os-specific stuff you need to use `uint` and the stuff related to that.
+To learn more about the variables, there size and bound values, it is available on go site.
+Usually `int` works at most of the places for os-specific stuff you need to use `uint`.
 
 * If you not assign the values to variable, go will auto-assigns - "", 0, false etc.
 

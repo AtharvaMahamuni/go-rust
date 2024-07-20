@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"sort"	
+	"sort"
 )
 
 func main() {
@@ -21,11 +21,11 @@ func main() {
 	// fmt.Println(fruitList[:3])
 
 	// It will create array and append method can't be used
-	// highScores := [4]int{} 
+	// highScores := [4]int{}
 
 	// It will create the slice and you can use the append method
-	highScores := make([]int, 4) 
-	
+	highScores := make([]int, 4)
+
 	highScores[0] = 123
 	highScores[1] = 213
 	highScores[2] = 312

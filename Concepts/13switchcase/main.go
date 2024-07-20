@@ -2,18 +2,18 @@ package main
 
 import (
 	"fmt"
-	"time"
 	"math/rand"
+	"time"
 )
 
 func main() {
 	fmt.Println("Welcome to switch case in Golang!")
 
-	rand.Seed(time.Now().UnixNano())
+	// rand.Seed(time.Now().UnixNano()) // depricated
+	rand.NewSource(time.Now().UnixNano())
 	diceNumber := rand.Intn(6) + 1
 
 	fmt.Println("Value of dice : ", diceNumber)
-
 
 	switch diceNumber {
 	case 6:

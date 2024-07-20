@@ -16,13 +16,13 @@ func main() {
 }
 
 type User struct {
-	Name string
-	Email string
+	Name   string
+	Email  string
 	Status bool
-	Age int
+	Age    int
 }
 
 type Test struct {
 	Details User
-	Data string
+	Data    string
 }

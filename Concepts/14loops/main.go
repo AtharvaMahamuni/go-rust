@@ -8,7 +8,6 @@ func main() {
 	days := []string{"Sunday", "Tuesday", "Wednesday", "Friday", "Saturday"}
 	fmt.Println(days)
 
-
 	// Regular for loop
 	// for i:=0; i<len(days); i++ {
 	// 	fmt.Println(days[i])
@@ -23,7 +22,7 @@ func main() {
 	// 	fmt.Printf("The day at index %v, is %v\n", index, day)
 	// }
 
-	rougueValue := 1 
+	rougueValue := 1
 
 	// like a while loop
 	for rougueValue < 10 {
@@ -38,10 +37,10 @@ func main() {
 		// }
 
 		fmt.Println("Value is : ", rougueValue)
-		
-		rougueValue++;
+
+		rougueValue++
 	}
 
-	lco:
-		fmt.Println("Hey, you are 2.")
+lco:
+	fmt.Println("Hey, you are 2.")
 }
