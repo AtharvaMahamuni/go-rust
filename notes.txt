@@ -162,3 +162,9 @@ In go there is no try catch, every thing expects either value or error.
 
 * More on Runtime package to get low level information visit - https://pkg.go.dev/runtime
 
+
+=== {GO MOD } ===
+
+When you write backend application it eventually has to go into production.
+Go Mod is one of the tool from go which helps to do lot of things
+https://go.dev/blog/using-go-modules

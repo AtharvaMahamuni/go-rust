@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/get', (req, res) => {
-    res.status(200).json({message: "Hello from learnCodeonline.in"})
+    res.status(200).json({message: "Hello from learnCodeonline.in", something: "Hey! this is something", author: "Atharva", country: "India", age: 24})
   })
 
 

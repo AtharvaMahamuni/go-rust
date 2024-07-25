@@ -17,7 +17,7 @@ func encodingJSON() {
 	lcoCourses := []course{
 		{"ReactJS Bootcamp", 299, "lco", "ase123", []string{"webdev", "react"}},
 		{"Flutter Bootcamp", 299, "lco", "asd333", []string{"Mobile", "dart"}},
-		{"HTML&CSS Bootcamp", 99, "lco", "sdfa324", []string{"webdev", "dev"}},
+		{"HTML/CSS Bootcamp", 99, "lco", "sdfa324", []string{"webdev", "dev"}},
 		{"Android Bootcamp", 999, "lco", "bcvvb2", nil},
 	}
 

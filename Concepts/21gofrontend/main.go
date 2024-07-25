@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 	"net/http"
@@ -10,9 +11,9 @@ import (
 
 func main() {
 	fmt.Println("Let's use the go to consume the APIs")
-	// PerformGetRequest()
+	PerformGetRequest()
 	// PerformPostJSONRequest()
-	PerformPostFormRequest()
+	// PerformPostFormRequest()
 }
 
 func PerformGetRequest() { // In real world handle it by getting url as a parameter
@@ -39,6 +40,11 @@ func PerformGetRequest() { // In real world handle it by getting url as a parame
 	responseString.Write(content) // Write function returns the bytecount & error
 	fmt.Println(responseString.String())
 	// fmt.Println("Byte count is")
+
+	var jsonMap map[string]interface{}
+	json.Unmarshal([]byte(responseString.String()), &jsonMap)
+
+	fmt.Println("Author:", jsonMap["author"], "\nAge:", jsonMap["age"])
 }
 
 func PerformPostJSONRequest() {
