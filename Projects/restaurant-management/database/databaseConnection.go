@@ -9,11 +9,12 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-func DBinstance() *mongo.Collection {
+func DBinstance(collectionName string) *mongo.Collection {
 
 	const connectionString = "mongodb://localhost:27017"
 	const dbName = "restaurant"
-	const collectionName = "food"
+	// const collectionName = "food"
+	// string collName = collectionName
 
 	// Reference of collection - Most important
 	var mongoCollection *mongo.Collection
