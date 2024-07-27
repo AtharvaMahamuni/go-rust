@@ -150,11 +150,11 @@ func UpdateInvoice() gin.HandlerFunc {
 		var updateObj primitive.D
 
 		if invoice.Payment_method != nil {
-			updateObj = append(updateObj, bson.E{"payment_method", invoice.Payment_method})
+			updateObj = append(updateObj, bson.E{Key: "payment_method", Value: invoice.Payment_method})
 		}
 
 		if invoice.Payment_status != nil {
-			updateObj = append(updateObj, bson.E{"payment_status", invoice.Payment_status})
+			updateObj = append(updateObj, bson.E{Key: "payment_status", Value: invoice.Payment_status})
 		}
 
 		invoice.Updated_at, _ = time.Parse(time.RFC3339, time.Now().Format(time.RFC3339))

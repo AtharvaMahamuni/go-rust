@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"context"
+	"fmt"
 	"log"
 	"net/http"
 	"time"
@@ -149,5 +150,6 @@ func UpdateMenu() gin.HandlerFunc {
 }
 
 func inTimeSpan(start, end, check time.Time) bool {
+	fmt.Print(check)
 	return start.After(time.Now()) && end.After(start)
 }
