@@ -36,8 +36,8 @@ func GetUsers() gin.HandlerFunc {
 			page = 1
 		}
 
-		startIndex := (page - 1) * recordPerPage
-		startIndex, err = strconv.Atoi(c.Query("startIndex"))
+		// startIndex := (page - 1) * recordPerPage
+		startIndex, err := strconv.Atoi(c.Query("startIndex"))
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -103,7 +103,8 @@ func SignUp() gin.HandlerFunc {
 			return
 		}
 
-		count, err := userCollection.CountDocuments(ctx, bson.M{"email": user.Email})
+		// count, err := userCollection.CountDocuments(ctx, bson.M{"email": user.Email})
+		_, err := userCollection.CountDocuments(ctx, bson.M{"email": user.Email})
 		if err != nil {
 			log.Panic(err)
 			c.JSON(http.StatusInternalServerError, gin.H{"error": "error occured while checking for the email"})
@@ -113,7 +114,7 @@ func SignUp() gin.HandlerFunc {
 		password := HashPassword(*user.Password)
 		user.Password = &password
 
-		count, err = userCollection.CountDocuments(ctx, bson.M{"phone": user.Phone})
+		count, err := userCollection.CountDocuments(ctx, bson.M{"phone": user.Phone})
 		if err != nil {
 			log.Panic(err)
 			c.JSON(http.StatusInternalServerError, gin.H{"error": "error occured while checking for the phone number"})
@@ -163,12 +164,13 @@ func Login() gin.HandlerFunc {
 		}
 
 		passwordIsValid, msg := VerifyPassword(*user.Password, *foundUser.Password)
-		if passwordIsValid != true {
+		if !passwordIsValid {
+			fmt.Sprintln(msg)
 			c.JSON(http.StatusBadRequest, gin.H{"error": "user password is incorrect"})
 			return
 		}
 
-		token, refreshToken, _ := helper.GenerateAllTokens(*foundUser.Email, *foundUser.First_name, *&foundUser.Last_name, *&foundUser.User_id)
+		token, refreshToken, _ := helper.GenerateAllTokens(*foundUser.Email, *foundUser.First_name, *foundUser.Last_name, foundUser.User_id)
 
 		helper.UpdateAllTokens(token, refreshToken, foundUser.User_id)
 
@@ -192,7 +194,7 @@ func VerifyPassword(userPassword string, providedPassword string) (bool, string)
 	msg := ""
 
 	if err != nil {
-		msg = fmt.Sprintf("Login of password is incorrect")
+		msg = fmt.Sprintln("Login of password is incorrect")
 		check = false
 	}
 
