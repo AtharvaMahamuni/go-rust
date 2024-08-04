@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"strconv"
 	"time"
 
 	"github.com/atharvamahamuni/golang/projects/restaurant-management/database"
@@ -26,37 +25,10 @@ func GetUsers() gin.HandlerFunc {
 		var ctx, cancel = context.WithTimeout(context.Background(), 100*time.Second)
 		defer cancel()
 
-		recordPerPage, err := strconv.Atoi(c.Query("recordPerPage"))
-		if err != nil || recordPerPage < 1 {
-			recordPerPage = 10
-		}
-
-		page, err := strconv.Atoi(c.Query("page"))
-		if err != nil || page < 1 {
-			page = 1
-		}
-
-		// startIndex := (page - 1) * recordPerPage
-		startIndex, err := strconv.Atoi(c.Query("startIndex"))
+		result, err := userCollection.Find(context.TODO(), bson.M{})
 		if err != nil {
-			log.Fatal(err)
-		}
-
-		matchStage := bson.D{{Key: "$match", Value: bson.D{{}}}}
-
-		projectStage := bson.D{
-			{Key: "$project", Value: bson.D{
-				{Key: "_id", Value: 0},
-				{Key: "total_count", Value: 1},
-				{Key: "user_items", Value: bson.D{{Key: "$slice", Value: []interface{}{"$data", startIndex, recordPerPage}}}},
-			}},
-		}
-
-		result, err := userCollection.Aggregate(ctx, mongo.Pipeline{
-			matchStage, projectStage,
-		})
-		if err != nil {
-			c.JSON(http.StatusInternalServerError, gin.H{"error": "error occured while listing user items"})
+			c.JSON(http.StatusInternalServerError, gin.H{"error": "error occured while listing tables"})
+			return
 		}
 
 		var allUsers []bson.M
@@ -64,7 +36,7 @@ func GetUsers() gin.HandlerFunc {
 			log.Fatal(err)
 		}
 
-		c.JSON(http.StatusOK, allUsers)
+		c.JSON(http.StatusOK, gin.H{"users": allUsers})
 	}
 }
 
@@ -79,6 +51,7 @@ func GetUser() gin.HandlerFunc {
 		err := userCollection.FindOne(ctx, bson.M{"user_id": userId}).Decode(&user)
 		if err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": "error occured while listing user"})
+			return
 		}
 
 		c.JSON(http.StatusOK, user)
@@ -88,7 +61,7 @@ func GetUser() gin.HandlerFunc {
 func SignUp() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		var ctx, cancel = context.WithTimeout(context.Background(), 100*time.Second)
-		cancel()
+		defer cancel()
 
 		var user models.User
 
@@ -154,6 +127,16 @@ func Login() gin.HandlerFunc {
 
 		if err := c.BindJSON(&user); err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+			return
+		}
+
+		if user.Email == nil {
+			c.JSON(http.StatusBadRequest, gin.H{"error": "Email not provided"})
+			return
+		}
+
+		if user.Password == nil {
+			c.JSON(http.StatusBadRequest, gin.H{"error": "Password not provided"})
 			return
 		}
 
