@@ -59,7 +59,7 @@ func CreateTable() gin.HandlerFunc {
 
 		var table models.Table
 
-		if err := c.BindJSON(table); err != nil {
+		if err := c.BindJSON(&table); err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 			return
 		}

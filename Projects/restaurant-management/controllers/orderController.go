@@ -46,6 +46,7 @@ func GetOrder() gin.HandlerFunc {
 		err := orderCollection.FindOne(ctx, bson.M{"order_id": orderId}).Decode(&order)
 		if err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{"error": "unable to find the order with order"})
+			return
 		}
 
 		c.JSON(http.StatusOK, order)
@@ -62,6 +63,7 @@ func CreateOrder() gin.HandlerFunc {
 
 		if err := c.BindJSON(&order); err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+			return
 		}
 
 		validationErr := validate.Struct(order)
