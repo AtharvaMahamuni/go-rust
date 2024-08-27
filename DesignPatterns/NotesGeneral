@@ -1,0 +1,15 @@
+Gangs of 4 book is reffered for the design patterns.
+There are many benfits to improve the clearity, maintainability and reusability of the code.
+
+Will learn this with the real life example.
+
+Design Patterns -
+
+
+Section 1
+==========
+Web application basics with go templates.
+
+
+Web Server <--> Router <--> Handlers <--> DB/JSON/HTML/SomeService
+
