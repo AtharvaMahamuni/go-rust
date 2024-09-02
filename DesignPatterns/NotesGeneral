@@ -6,10 +6,31 @@ Will learn this with the real life example.
 Design Patterns -
 
 
-Section 1
+Section 1 - Introduction
 ==========
 Web application basics with go templates.
-
-
+ 
 Web Server <--> Router <--> Handlers <--> DB/JSON/HTML/SomeService
 
+Section 2 - Setting up web application serving static templates
+==========
+
+Use of gohtml for creating template, and passing from the go request.
+Servier is in *chi* library
+Caching of template in the maps and passing the argument from the command line is the new thing I learned.
+
+
+Section 3 -  Factory Pattern
+==========
+
+1. The Factory Pattern
+- Simplest of all
+- Create an instance of an object with sensible default value (good example is new keyword)
+
+
+2. The Abstract 
+- Common creational pattern
+- Create families of related objects without relying on their concrete classes
+
+---------
+Used the Factory pattern for creating the Pet object.
