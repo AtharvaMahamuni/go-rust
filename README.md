@@ -1,2 +1,2 @@
-# golang
-Learning a new language. Go.
+# Go & Rust
+Learning a new language. Go. Rust.
