@@ -1,5 +1,17 @@
 # Memory Management - Quick Reference Notes
 
+**📅 Created:** Session 1
+**🏷️ Topics:** Stack, Heap, Memory Management Strategies
+**🔗 Related:** [01_rust-ownership-guide.md](./01_rust-ownership-guide.md), [02_rust-basics-and-execution.md](./02_rust-basics-and-execution.md)
+
+---
+
+## Overview
+
+This note covers the fundamental concepts of memory management, including stack vs heap memory, different memory management strategies across languages, and why Rust's ownership system exists. This is essential foundational knowledge for understanding Rust's approach to memory safety.
+
+---
+
 ## The Two Memory Regions
 
 ### Stack Memory
@@ -167,5 +179,21 @@ STACK: [main's variables, main's return address]  <- Top removed!
 
 ---
 
-**Last Updated:** Learning Rust - Session 1
-**Next Topic:** Rust Ownership System
+## Summary
+
+**Key Takeaways:**
+- Stack is fast, fixed-size, automatic (LIFO structure)
+- Heap is slower, dynamic-size, requires management
+- Three approaches: Manual (C/C++), GC (Kotlin/Java), Ownership (Rust)
+- Rust's ownership system provides safety + speed without GC
+- Understanding stack/heap is crucial for mastering Rust
+
+**When to Use This Note:**
+- Before diving into ownership concepts
+- When confused about memory allocation
+- To understand why Rust's ownership system exists
+
+---
+
+**📝 Last Updated:** Session 1
+**➡️ Next Topic:** [Rust Ownership System](./01_rust-ownership-guide.md)

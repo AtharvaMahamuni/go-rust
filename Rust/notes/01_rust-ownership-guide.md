@@ -1,5 +1,17 @@
 # Rust Ownership & Borrowing - Complete Reference Guide
 
+**📅 Created:** Session 1
+**🏷️ Topics:** Ownership, Borrowing, Move Semantics, References, Lifetimes
+**🔗 Related:** [00_memory-management-reference.md](./00_memory-management-reference.md), [04_variables_shadowing.md](./04_variables_shadowing.md)
+
+---
+
+## Overview
+
+This is a comprehensive reference guide for Rust's ownership and borrowing system - the core feature that makes Rust unique. It covers ownership rules, move semantics, borrowing rules, common gotchas, and comparisons with Kotlin. Essential reading for understanding how Rust achieves memory safety without garbage collection.
+
+---
+
 ## Table of Contents
 1. [Memory Management Fundamentals](#memory-management-fundamentals)
 2. [Ownership Rules](#ownership-rules)
@@ -494,5 +506,24 @@ After mastering ownership and borrowing, explore:
 
 ---
 
-*Last Updated: 2025-11-01*
-*Created from first principles learning session*
+## Summary
+
+**Key Takeaways:**
+- Each value has exactly one owner at a time
+- Ownership can be moved or borrowed
+- Borrowing: multiple readers OR one writer (not both)
+- References don't own data - only the owner frees memory
+- All ownership rules checked at compile-time (zero runtime cost)
+- Move semantics prevent double-free bugs
+- Borrow checker prevents data races
+
+**When to Use This Note:**
+- When you get ownership/borrowing compiler errors
+- To understand move vs copy semantics
+- When learning about references and lifetimes
+- As a quick reference for borrowing rules
+
+---
+
+**📝 Last Updated:** November 1, 2025
+**➡️ Next Topics:** [Variables & Shadowing](./04_variables_shadowing.md), Smart Pointers (Box, Rc, Arc)

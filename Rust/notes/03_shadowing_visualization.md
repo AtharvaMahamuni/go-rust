@@ -1,5 +1,17 @@
 # Shadowing: Stack and Heap Visualization
 
+**📅 Created:** Session 2
+**🏷️ Topics:** Shadowing, Stack Memory, Heap Memory, Memory Cleanup
+**🔗 Related:** [04_variables_shadowing.md](./04_variables_shadowing.md), [01_rust-ownership-guide.md](./01_rust-ownership-guide.md)
+
+---
+
+## Overview
+
+This note provides detailed visualizations of how shadowing works at the memory level, showing what happens on both the stack and heap when you shadow variables. It clarifies when memory is freed and what the compiler guarantees vs optimizes. Essential for understanding the memory implications of shadowing.
+
+---
+
 ## Scenario 1: Stack Values (Integers)
 
 ```rust
@@ -178,4 +190,29 @@ This is safe because:
 
 ---
 
-**Next:** See this in action in `02_shadowing.rs`!
+## Summary
+
+**Key Takeaways:**
+- Shadowing creates a NEW binding; old binding's scope ends immediately
+- Stack values: Compiler may optimize and reuse memory slots
+- Heap values: Memory is freed IMMEDIATELY when shadowed (no leak)
+- Rust's ownership rule: "When a binding goes out of scope, its value is dropped"
+- Type changes are safe with shadowing because each binding is independent
+- All behavior is checked at compile-time for safety
+
+**Visual Memory Model:**
+```
+Stack values:   [x₁=5] → [x₂=6]  (may reuse slot)
+Heap values:    x₁→"hello" → [freed] when x₂→"world" created
+```
+
+**When to Use This Note:**
+- When confused about shadowing's memory behavior
+- To understand when heap memory is freed
+- To differentiate between compiler guarantees and optimizations
+- When learning about ownership and Drop trait
+
+---
+
+**📝 Last Updated:** Session 2
+**➡️ Next:** See [04_variables_shadowing.md](./04_variables_shadowing.md) for complete shadowing guide and practical examples
